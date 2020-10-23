@@ -1,0 +1,26 @@
+{
+  "name": "Badgr-Create-Badge",
+  "version": "1.0.0",
+  "description": "The Badgr Create Badge action uses the label on the pull requests to automate the creation of badges.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yajushiSri/Badgr-Create-Badge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yajushiSri/Badgr-Create-Badge/issues"
+  },
+  "homepage": "https://github.com/yajushiSri/Badgr-Create-Badge#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
+}
