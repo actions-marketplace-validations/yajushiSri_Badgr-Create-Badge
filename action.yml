@@ -1,0 +1,6 @@
+name: Badgr Create Badge
+author: yajushiSri
+description: Create a badge for the pull request event.
+runs:
+  using: node12
+  main: 'main.js'
