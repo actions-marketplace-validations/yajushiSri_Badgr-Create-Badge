@@ -1,6 +1,22 @@
 name: Badgr Create Badge
 author: yajushiSri
 description: Create a badge for the pull request event.
+inputs:
+  github-token:
+    description: The GitHub token used to create an authenticated client.
+    required: true
+  username:
+    description: The Badgr username with relevant permissions for issuing the badge.
+    required: true
+  password:
+    description: The password associated with the Badgr user account.
+    required: true
+  sha:
+    description: Sha to get PR for.  Defaults to current sha.
+    required: false
+  repo:
+    description: The name of the GitHub repository.
+    required: true
 runs:
   using: node12
   main: 'main.js'
