@@ -1,5 +1,5 @@
 {
-  "name": "Badgr-Create-Badge",
+  "name": "badgr-create-badge",
   "version": "1.0.0",
   "description": "The Badgr Create Badge action uses the label on the pull requests to automate the creation of badges.",
   "main": "index.js",

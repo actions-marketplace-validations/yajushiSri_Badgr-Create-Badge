@@ -19,7 +19,7 @@ async function main() {
     const repo = getInput('repo');
     const username = getInput('username');
     const password = getInput('password');
-    
+
     const octokit = GitHub.getOctokit(token);
 
     // get current pull request number
@@ -29,6 +29,8 @@ async function main() {
         commit_sha: sha,
     });
     const pr_number = getPRnumber.data[0].number;
+    console.log("RESPONSE getPRnumber ", getPRnumber);
+    console.log("pr_number: ", pr_number);
     // get pull request data 
     const { data: pullRequest } = await octokit.pulls.get({
         owner: repo.split("/")[0],
@@ -36,6 +38,8 @@ async function main() {
         pull_number: pr_number
     });
     const githubUsername = pullRequest.user.login;
+    console.log("RESPONSE pullRequest ", pullRequest);
+    console.log("githubUsername: ", githubUsername);
     const labelsArray = new Array();  
     for (i in pullRequest.labels){
         labelsArray.push(pullRequest.labels[i].name);
@@ -47,7 +51,10 @@ async function main() {
     const fullName = userData.name;
     const userEmail = userData.email;
     const pr_url = pullRequest.html_url;
-
+    console.log("RESPONSE userData ", userData);
+    console.log("fullName: ", fullName);
+    console.log("userEmail ", userEmail);
+    console.log("pr_url: ", pr_url);
     var options = {
         method: 'POST',
         uri: 'https://api.eu.badgr.io/o/token',
@@ -95,6 +102,9 @@ async function main() {
                 }        
             }            
         });
+    console.log("RESPONSE badgeDetails ", badgeDetails);
+    console.log("RESPONSE badgeDetails typeof ", typeof badgeDetails);
+    console.log("RESPONSE badgeDetails entity id ", badgeDetails.entityId);
 
     var options = {
         method: 'POST',
@@ -134,7 +144,7 @@ async function main() {
 
     await rp(options)
     .then(function (body) {  
-        console.log(body);
+        console.log("ASSERT BADGE: ", body);
     })
     .catch(function (err) { 
         console.log(err)
