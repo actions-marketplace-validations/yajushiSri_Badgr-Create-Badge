@@ -143,8 +143,7 @@ async function main() {
                 });
         }
     } else {
-        console.log("The badge(s) generation failed for the specified recipient");
-        break;
+        console.log("The badge(s) generation failed for the specified recipient"); 
     }
 }
 
